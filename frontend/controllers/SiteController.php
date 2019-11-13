@@ -34,7 +34,7 @@ class SiteController extends Controller
     {
         $name = 'name';
         $message = 'message';
-        return $this->render('error',[
+        return $this->render('error', [
             'name' => $name,
             'message' => $message,
         ]);

@@ -43,7 +43,6 @@ class UserController extends Controller
     public function actionDelete($id)
     {
         return $this->findModel($id)->delete();
-
     }
 
     /**

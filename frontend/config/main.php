@@ -15,14 +15,14 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'user' => [
+        /*'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-        ],
+        ],*/
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            'name' => 'frontend',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -36,14 +36,16 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                /*"<controller:\w+>/<action:\w+>/<id:\d+>"=>"<controller>/<action>",
+                "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"*/
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];

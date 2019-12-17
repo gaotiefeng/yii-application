@@ -7,19 +7,25 @@ use common\models\User;
 use common\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class UserController extends SiteController
 {
+
     /**
      * Lists all User models.
      * @return mixed
      */
     public function actionIndex()
     {
-        return 'index';
+        $request = Yii::$app->request;
+
+        $params = $request->queryParams;
+
+        $this->success($params,'请求成功');
     }
 
     /**

@@ -19,16 +19,6 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
 
     public function actionError()
     {
@@ -38,5 +28,15 @@ class SiteController extends Controller
             'name' => $name,
             'message' => $message,
         ]);
+    }
+
+    public function success($data,$message)
+    {
+        $params['data'] = $data;
+        $params['message'] = $message;
+        $params['code'] = 200;
+        \Yii::$app->response->data = $params;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        \Yii::$app->end();
     }
 }

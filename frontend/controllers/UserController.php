@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\job\demo;
 use Yii;
 use common\models\User;
 use common\models\UserSearch;
@@ -23,6 +24,8 @@ class UserController extends SiteController
     {
         $request = Yii::$app->request;
 
+        Yii::$app->queue->push(new demo(["name"=>"name","mobile" => "123454565"]));
+
         $params = $request->queryParams;
 
         $this->success($params,'请求成功');
@@ -35,7 +38,7 @@ class UserController extends SiteController
      */
     public function actionCreate()
     {
-        return 'create';
+        return 'create121';
     }
 
 

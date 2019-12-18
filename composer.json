@@ -21,7 +21,8 @@
         "gaotiefeng/redis-application": "^1.0",
         "overtrue/wechat": "~4.0",
         "jianyan74/yii2-easy-wechat": "^1.1",
-        "yiisoft/yii2-queue": "^2.3"
+        "yiisoft/yii2-queue": "^2.3",
+        "yiisoft/yii2-redis": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

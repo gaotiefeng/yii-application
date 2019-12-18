@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log',],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -45,6 +45,7 @@ return [
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>"*/
             ],
         ],
+
 
     ],
     'params' => $params,

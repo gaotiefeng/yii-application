@@ -20,14 +20,14 @@ class SiteController extends Controller
     }
 
 
-    public function actionError()
+    public function error($data,$message)
     {
-        $name = 'name';
-        $message = 'message';
-        return $this->render('error', [
-            'name' => $name,
-            'message' => $message,
-        ]);
+        $params['data'] = $data;
+        $params['message'] = $message;
+        $params['code'] = 200;
+        \Yii::$app->response->data = $params;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        \Yii::$app->end();
     }
 
     public function success($data,$message)

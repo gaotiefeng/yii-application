@@ -5,15 +5,15 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "wx_user".
+ * This is the model class for table "user".
  *
  * @property int $id
  * @property string $openid
- * @property string $nickname
+ * @property string $name
+ * @property string $password
+ * @property string $mobile
  * @property string $headimgurl
- * @property string $city
- * @property string $province
- * @property int $sex
+ * @property string $nickname
  * @property string $created_at
  * @property string $updated_at
  */
@@ -24,7 +24,7 @@ class User extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'wx_user';
+        return 'user';
     }
 
     /**
@@ -33,10 +33,10 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sex'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['openid', 'headimgurl'], 'string', 'max' => 64],
-            [['nickname', 'city', 'province'], 'string', 'max' => 32],
+            [['openid', 'name', 'password', 'headimgurl'], 'string', 'max' => 64],
+            [['mobile'], 'string', 'max' => 11],
+            [['nickname'], 'string', 'max' => 32],
         ];
     }
 
@@ -48,11 +48,11 @@ class User extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'openid' => 'Openid',
-            'nickname' => 'Nickname',
+            'name' => 'Name',
+            'password' => 'Password',
+            'mobile' => 'Mobile',
             'headimgurl' => 'Headimgurl',
-            'city' => 'City',
-            'province' => 'Province',
-            'sex' => 'Sex',
+            'nickname' => 'Nickname',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

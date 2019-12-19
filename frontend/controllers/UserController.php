@@ -24,9 +24,12 @@ class UserController extends SiteController
     {
         $request = Yii::$app->request;
 
-        Yii::$app->queue->push(new demo(["name"=>"name","mobile" => "123454565"]));
+        //Yii::$app->queue->push(new demo(["name"=>"name","mobile" => "123454565"]));
 
         $params = $request->queryParams;
+        $offset = $request->get('offset',0);
+        $limit = $request->get('limit', 10);
+
 
         $this->success($params,'请求成功');
     }

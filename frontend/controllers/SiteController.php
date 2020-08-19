@@ -16,7 +16,7 @@ use frontend\models\ContactForm;
 /**
  * Site controller
  */
-class SiteController extends BaseController
+class SiteController extends Controller
 {
 
     /**
@@ -43,23 +43,6 @@ class SiteController extends BaseController
         ];
     }
 
-
-    /**
-     * 接口测试
-     */
-    public function actionTest()
-    {
-        $request = Yii::$app->request;
-        $data = $request->post();
-        $data['arr'] = 0;
-        if (isset($data['grade']) && is_array($data['grade'])) {
-            $data['arr'] = true;
-        }else {
-            $data['arr'] = false;
-        }
-        $this->response_success($data);
-
-    }
 
     /**
      * Displays homepage.

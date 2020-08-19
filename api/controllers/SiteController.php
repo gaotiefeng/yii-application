@@ -41,14 +41,8 @@ class SiteController extends BaseController
     {
         $request = Yii::$app->request;
         $data = $request->post();
-        $data['arr'] = 0;
-        if (isset($data['grade']) && is_array($data['grade'])) {
-            $data['arr'] = true;
-        }else {
-            $data['arr'] = false;
-        }
-        $this->response_success($data);
 
+        $this->response_success($data);
     }
 
     /**

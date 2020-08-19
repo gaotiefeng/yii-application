@@ -20,10 +20,20 @@ class UserHandler extends Component
     }
 
     //触发事件
-    public function send(array $user)
+    public function send($user = [])
     {
         $event = new \frontend\service\event\UserEvent();
+        $user = array();
+        if (empty($user)) {
+            $user['name'] = 1212;
+        }
         $event->user = $user;
         $this->trigger($this->event_name,$event);
+    }
+
+    public function behavior()
+    {
+        print_r($this->event_name);
+        echo PHP_EOL;
     }
 }
